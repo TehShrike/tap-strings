@@ -62,6 +62,7 @@ testP('test', async t => {
 testP('bail', async t => {
 	t.equal(tap.bail(), 'Bail out!')
 	t.equal(tap.bail('OH NO'), 'Bail out! OH NO')
+	t.equal(tap.bail('OH\nNO'), 'Bail out! OH NO')
 })
 
 testP('diagnostic', async t => {
