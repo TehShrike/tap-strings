@@ -1,0 +1,25 @@
+{
+  "name": "tap-strings",
+  "version": "1.0.0",
+  "description": "Generate valid TAP output as strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TehShrike/tap-strings.git"
+  },
+  "keywords": [
+    "tap",
+    "test",
+    "string",
+    "output"
+  ],
+  "author": "TehShrike",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/TehShrike/tap-strings/issues"
+  },
+  "homepage": "https://github.com/TehShrike/tap-strings#readme"
+}
