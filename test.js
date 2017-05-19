@@ -53,8 +53,15 @@ testP('test', async t => {
 	await a(tap.test(false, 3), { ok: false, point: 3 })
 
 	t.equal(tap.todo(false, 13, 'hrrm', 'bend space and time'), 'not ok 13 hrrm # TODO bend space and time')
+	t.equal(tap.todo(false, 14, 'hrrm', 'bend\nspace and time'), 'not ok 14 hrrm # TODO bend space and time')
+	t.equal(tap.todo(false, 15, 'hrrm'), 'not ok 15 hrrm # TODO')
+	t.equal(tap.todo(false, 16), 'not ok 16 # TODO')
+
 	t.equal(tap.skip(true, 23, '', 'Insufficient flogiston pressure.'), 'ok 23 # SKIP Insufficient flogiston pressure.')
 	t.equal(tap.skip(true, 23, 'yarp', 'Insufficient flogiston pressure.'), 'ok 23 yarp # SKIP Insufficient flogiston pressure.')
+	t.equal(tap.skip(true, 23, 'yarp', 'Insufficient\nflogiston pressure.'), 'ok 23 yarp # SKIP Insufficient flogiston pressure.')
+	t.equal(tap.skip(true, 23, 'yarp'), 'ok 23 yarp # SKIP')
+	t.equal(tap.skip(true, 23), 'ok 23 # SKIP')
 
 	t.equal(tap.test(false, 33, 'several\nlines'), 'not ok 33 several lines')
 })
