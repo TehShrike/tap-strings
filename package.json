@@ -4,7 +4,7 @@
   "description": "Generate valid TAP output as strings",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js && jsmd readme.md"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/TehShrike/tap-strings#readme",
   "devDependencies": {
+    "jsmd": "0.3.1",
     "tap_parser": "1.0.4",
     "tape": "4.6.3"
   }
