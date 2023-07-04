@@ -4,62 +4,62 @@ Generate valid TAP output as strings.
 
 
 <!--js
-const parse = require('./')
+const tap = require('./')
 -->
 
 # API
 
 ```
-const parse = require('tap-strings')
+const tap = require('tap-strings')
 ```
 
-## parse.version(number)
+## tap.version(number)
 
 ```js
-parse.version(13) // => `TAP version 13`
+tap.version(13) // => `TAP version 13`
 ```
 
-## parse.plan(start, end)
+## tap.plan(start, end)
 
 ```js
-parse.plan(1, 5) // => `1..5`
+tap.plan(1, 5) // => `1..5`
 ```
 
-## parse.test(ok, number, [description])
+## tap.test(ok, number, [description])
 
 ```js
-parse.test(true, 1, `lookin' cool my man`) // => `ok 1 lookin' cool my man`
+tap.test(true, 1, `lookin' cool my man`) // => `ok 1 lookin' cool my man`
 ```
 
-## parse.todo(ok, number, [descriptor, [directive]])
+## tap.todo(ok, number, [descriptor, [directive]])
 
 ```js
-const todoOutput = parse.todo(false, 2, `everything's groovy`, `Fix this later`)
+const todoOutput = tap.todo(false, 2, `everything's groovy`, `Fix this later`)
 todoOutput // => `not ok 2 everything's groovy # TODO Fix this later`
 ```
 
-## parse.skip(ok, number, [descriptor, [directive]])
+## tap.skip(ok, number, [descriptor, [directive]])
 
 ```js
-parse.skip(true, 3, null, `Don't care`) // => `ok 3 # SKIP Don't care`
+tap.skip(true, 3, null, `Don't care`) // => `ok 3 # SKIP Don't care`
 ```
 
-## parse.bail([message])
+## tap.bail([message])
 
 ```js
-parse.bail(`eek`) // => `Bail out! eek`
+tap.bail(`eek`) // => `Bail out! eek`
 ```
 
-## parse.diagnostic([message])
+## tap.diagnostic([message])
 
 ```js
-parse.diagnostic(`yo`) // => `# yo`
+tap.diagnostic(`yo`) // => `# yo`
 ```
 
-## parse.message(message)
+## tap.message(message)
 
 ```js
-const messageOutput = parse.message(`This is totally
+const messageOutput = tap.message(`This is totally
 a multiline string`)
 
 const expected = `  ---
